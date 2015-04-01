@@ -15,9 +15,9 @@
                 <version>2.1</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <phase>test</phase>
                         <goals>
-                            <goal>shade</goal>
+                            <goal>java</goal>
                         </goals>
                         <configuration>
                             <transformers>
