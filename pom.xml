@@ -2,34 +2,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>edu.csit.csumb</groupId>
-    <artifactId>gs-maven</artifactId>
+
+    <groupId>sorto</groupId>
+    <artifactId>cst438-maven</artifactId>
     <packaging>jar</packaging>
     <version>0.1.0</version>
+    <url>http://maven.apache.org</url>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>2.1</version>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer
-                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>sorto.RoshamboApp</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+
+
+                <build>
+                  <pluginManagement>
+                    <plugins>
+                        <plugin>
+                          <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>3.3</version>
+                          </plugin>
+                          <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                              <artifactId>exec-maven-plugin</artifactId>
+
+                                <configuration>
+                                <mainClass>sorto.RoshamboApp</mainClass>
+                              </configuration>
+
+                        </plugin>
+                    </plugins>
+                  </pluginManagement>
+                </build>
+            </project>
